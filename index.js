@@ -6,7 +6,7 @@ app.get('/gpt', async (req, res) => {
   try {
     const { prompt } = req.query;
     const response = await axios.get(`https://apis-samir.onrender.com/gpt?content=${encodeURIComponent(prompt)}`);
-    res.json({ answer: response.data.answer });
+    res.json({ answer: response.data });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
