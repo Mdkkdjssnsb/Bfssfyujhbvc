@@ -5,8 +5,8 @@ const app = express();
 app.get('/gpt', async (req, res) => {
   try {
     const { prompt } = req.query;
-   const response = await axios.get(`https://markdevsapi-2014427ac33a.herokuapp.com/gpt4?ask=${encodeURIComponent(prompt)}`);
-    res.json({ answer: response.data.answer });
+    const response = await axios.get(`https://markdevsapi-2014427ac33a.herokuapp.com/gpt4?ask=${encodeURIComponent(prompt)}`);
+    res.json({ answer: response.data });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
