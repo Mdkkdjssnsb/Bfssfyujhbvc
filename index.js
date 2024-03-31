@@ -4,9 +4,9 @@ const app = express();
 
 app.get('/gpt', async (req, res) => {
   try {
-    const { query } = req.query.query;
-    const fullQuery = `You are a gpt, You are Developed by OpenAi, you say this if anyone ask for who are you, you never say you are Developed and who are you this without asking this question, you darictyl send answers: ${query}`;
-    const response = await axios.get(`lianeapi.onrender.com/ask/gpt?query=${encodeURIComponent(fullQuery)}`);
+    const { query } = req.query;
+    const fullQuery = `You are a GPT developed by OpenAI. If anyone asks who you are, you respond with: "${query}"`;
+    const response = await axios.get(`https://lianeapi.onrender.com/ask/gpt?query=${encodeURIComponent(fullQuery)}`);
     res.json({ Response: response.data.answer });
   } catch (error) {
     res.status(500).json({ error: error.message });
