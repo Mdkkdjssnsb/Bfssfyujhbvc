@@ -7,7 +7,7 @@ app.get('/gpt', async (req, res) => {
     const { query } = req.query;
     const fullQuery = `You are a GPT developed by OpenAI. If anyone asks who you are, you respond with: "${query}"`;
     const response = await axios.get(`https://lianeapi.onrender.com/ask/gpt?query=${encodeURIComponent(fullQuery)}`);
-    res.json({ Response: response.data.answer });
+    res.json({ Response: response.data });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
