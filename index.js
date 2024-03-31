@@ -20,7 +20,7 @@ app.get('/gpt', async (req, res) => {
     const response = await axios.get(`https://sandipbaruwal.onrender.com/gpt2?prompt=${encodeURIComponent(fullPrompt)}&uid=1`);
 
     // Send the response from the external API back to the client
-    res.json({ Response: response.data.answer });
+    res.json({ Response: response.data });
   } catch (error) {
     // Handle errors
     res.status(500).json({ error: error.message });
