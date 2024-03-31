@@ -14,7 +14,7 @@ app.get('/gpt', async (req, res) => {
     }
 
     // Construct the full prompt
-    const fullPrompt = `You are a GPT developed by OpenAI. If anyone asks who you are, you respond with: "${prompt}"`;
+    const fullPrompt = `You are a GPT developed by OpenAI. If anyone asks who you are then you will say otherwise you never say that, You Provide only answer: "${prompt}"`;
 
     // Send a GET request to the external API
     const response = await axios.get(`https://lianeapi.onrender.com/ask/gpt?query=${encodeURIComponent(fullPrompt)}`);
