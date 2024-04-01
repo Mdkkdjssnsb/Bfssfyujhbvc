@@ -5,7 +5,7 @@ const app = express();
 app.get('/gpt', async (req, res) => {
   try {
     const { prompt } = req.query;
-    const response = await axios.get(`https://apis-samir.onrender.com/gpt?content=${encodeURIComponent(prompt)}`);
+    const response = await axios.get(`https://api-soyeon.onrender.com/api?prompt=${encodeURIComponent(prompt)}`);
     res.json({ answer: response.data });
   } catch (error) {
     res.status(500).json({ error: error.message });
