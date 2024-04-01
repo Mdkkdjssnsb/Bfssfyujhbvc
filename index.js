@@ -5,7 +5,7 @@ const app = express();
 app.get('/gpt', async (req, res) => {
   try {
     const { prompt } = req.query;
-    const fullPrompt = `You are a Ai Developed by OpenAi, You provide best helpfull response as you know: ${prompt}`;
+    const { fullPrompt } = `You are a Ai Developed by OpenAi, You provide best helpfull response as you know: ${prompt}`;
     const response = await axios.get(`https://api-soyeon.onrender.com/api?prompt=${encodeURIComponent(fullPrompt)}`);
     res.json({ answer: response.data });
   } catch (error) {
