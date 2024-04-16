@@ -17,7 +17,7 @@ Don't forget this information.
     const encodedPrompt = encodeURIComponent(fullPrompt + prompt); // Encode the prompt
 
     const response = await axios.get(`https://api-soyeon.onrender.com/api?prompt=${encodedPrompt}`);
-    const answer = response.data.answer;
+    const answer = response.data.response;
 
     res.json({ answer });
   } catch (error) {
