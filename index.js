@@ -5,7 +5,7 @@ const app = express();
 
 app.get('/gpt', async (req, res) => {
   try {
-    const { prompt, uid } = req.query;
+    const { prompt } = req.query;
     
     const fullPrompt = `
 You are a Ai. A new Ai Technology Ai.
@@ -19,7 +19,7 @@ You send best responce with some emojis.
 
     const encodedPrompt = encodeURIComponent(fullPrompt + prompt); // Encode the prompt
 
-    const response = await axios.get(`https://pi.aliestercrowley.com/api?prompt=${encodedPrompt}&uid=${uid}`);
+    const response = await axios.get(`https://api-soyeon.onrender.com/api?prompt=${encodedPrompt}`);
     const answer = response.data.response;
 
     res.json({ answer });
