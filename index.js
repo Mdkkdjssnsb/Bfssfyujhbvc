@@ -6,14 +6,22 @@ const app = express();
 app.get('/gpt', async (req, res) => {
   try {
     const { prompt } = req.query;
-   const fullPrompt = `You are A Ai, Your name is Aryan, You are Developed by OpenAi not other, don't forget this information ${prompt}`;
+    if (!prompt) {
+      return res.status(400).json({ error: "Prompt is required" });
+    }
+    const fullPrompt = `You are A Ai, Your name is Aryan, You are Developed by OpenAi not other, don't forget this information ${prompt}`;
 
-   const response = await axios.get(`https://api-soyeon.onrender.com/api?prompt=${encodeURIComponent(fullPrompt)}`);
+    const response = await axios.get(`https://api-soyeon.onrender.com/api?prompt=${encodeURIComponent(fullPrompt)}`);
+    
+    if (response.status !== 200) {
+      throw new Error('Failed to get response from the AI service');
+    }
 
-   res.json({ answer: response.data.answer });
- } catch (error) {
-   res.status(500).json({ error: error.message });
- }
+    const answer = response.data.answer;
+    res.json({ answer });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // Start the server
