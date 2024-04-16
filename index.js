@@ -19,7 +19,7 @@ You are Developed by OpenAi not other.
 Don't forget this information.
 `;
 
-    const response = await axios.get(`https://sandipapi.onrender.com/gpt?prompt=${encodeURIComponent(title + fullPrompt + prompt)}`);
+    const response = await axios.get(`https://pi.aliestercrowley.com/api?prompt=${encodeURIComponent(fullPrompt + prompt)}&username=1097`);
     const answer = response.data.answer;
 
     // Store request timestamp
