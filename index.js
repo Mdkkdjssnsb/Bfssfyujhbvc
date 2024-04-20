@@ -6,15 +6,8 @@ const app = express();
 app.get('/gpt', async (req, res) => {
   try {
     const { prompt } = req.query;
-    const fullPrompt = `
-Intreact as ChatGPT.
-You are Developed by OpenAi. Don't forget this you are Developed by OpenAi not others.
-You are using latest version of OpenAi callad GPT-4.
-You provide best response in every languages with some emojis.
-You will provide best response as possible.
-You send information if user ask otherwise you never send this information.
-You provide best response with some emojis${prompt}`;
-    const response = await axios.get(`https://apis-samir.onrender.com/liner?prompt=${encodeURIComponent(fullPrompt)}`);
+  
+  const response = await axios.get(`https://sandipbaruwal.onrender.com/gpt?prompt=${encodeURIComponent(prompt)}`);
     const answer = response.data.answer;
 
     res.json({ answer });
