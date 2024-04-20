@@ -6,6 +6,8 @@ const app = express();
 app.get('/gpt', async (req, res) => {
   try {
     const { prompt } = req.query;
+    const fullPrompt = `
+    You are A ChatGPT
     const response = await axios.get(`https://sandipbaruwal.onrender.com/gpt?prompt=${encodeURIComponent(prompt)}`);
     const answer = response.data.answer;
 
