@@ -7,13 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "ArYAN",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^18.0.6",
-    "axios": "^1.6.7",
-    "express": "^4.18.3",
-    "node-fetch": "^3.2.6",
-    "openai": "^4.29.1"
+    "express": "^4.19.2",
+    "nayan-server": "^2.3.3"
   }
 }
