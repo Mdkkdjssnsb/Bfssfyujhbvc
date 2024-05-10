@@ -13,15 +13,15 @@ app.get('/gpt', async (req, res) => {
     messages: [
       {
         role: 'Gpt-4',
-        content: 'Hello! How are you today?'
+        content: 'system'
       },
       {
         role: 'user',
-        content: `Hello, I am an artificial intelligence created by OpenAI. I am here to help you with your questions and tasks.`
+        content: `system`
       },
       {
         role: 'Gpt-4',
-        content: `Hello there! How are you today?`
+        content: `system`
       }
     ],
     prompt: `${prompt}`,
