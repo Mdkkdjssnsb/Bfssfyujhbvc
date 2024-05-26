@@ -1,7 +1,7 @@
 {
   "name": "nodejs",
   "version": "1.0.0",
-  "description": "",
+  "description": "An simple Ai api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/node": "^18.0.6",
     "express": "^4.19.2",
-    "nayan-server": "^2.3.3"
+    "g4f": "^1.4.3",
+    "hercai": "^12.2.0"
   }
 }
